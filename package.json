@@ -16,7 +16,7 @@
   "repository": "https://github.com/atom-ide-community/babel-plugin-transform-not-strict",
   "license": "MIT",
   "scripts": {
-    "test": "atom --test spec/test.js",
+    "test": "atom --test spec/spec.js",
     "bump": "ncu -u"
   },
   "peerDependencies": {
