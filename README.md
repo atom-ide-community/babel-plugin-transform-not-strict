@@ -2,7 +2,7 @@
 
 Remove 'use strict' if the file is 'not strict'
 
-Most of the bundlers and transpilers such as babel add `'use strict'` to the above of your file. This plugin will remove them if you add `'not strict'` to that file.
+Most of the bundlers and transpilers such as babel add `'use strict'` to the above of your file. This plugin will remove them if you add `'not strict'` to that file. You can also use this plugin to remove `'use strict'` from all the files
 
 ## Installation
 ```
@@ -15,6 +15,7 @@ npm install -save-dev "@babel/core"
 ```
 
 ## Usage
+
 1) put the following in above the a file that is not strict:
 ```js
 'not strict'
@@ -27,6 +28,29 @@ For example, create a `babel.config.js` file at the root of the project with the
 let presets = [];
 
 let plugins = ["babel-plugin-transform-not-strict"];
+
+module.exports = {
+  presets: presets,
+  plugins: plugins,
+  exclude: "node_modules/**",
+  sourceMap: "inline",
+};
+```
+
+### Usage Remove All
+
+You can also use this plugin to remove `'use strict'` from all the files. Just pass `removeAll: true`.
+```js
+let presets = [];
+
+let plugins = [
+  [
+    "babel-plugin-transform-not-strict",
+    {
+      removeAll: true,
+    },
+  ],
+];
 
 module.exports = {
   presets: presets,
