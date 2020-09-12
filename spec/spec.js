@@ -46,5 +46,58 @@ pluginTester({
 
       let x = 1;`,
     },
+
+    // With removeAll option
+    {
+      code: '"not strict"; "use strict";',
+      output:`
+      "not strict";
+      "not strict";`,
+      pluginOptions: {
+        removeAll: true,
+      },
+    },
+    {
+      code: '"not strict";',
+      output:'"not strict";',
+      pluginOptions: {
+        removeAll: true,
+      },
+    },
+    {
+      code: '"use strict";',
+      output: '"not strict";',
+      pluginOptions: {
+        removeAll: true,
+      },
+    },
+    {
+      code: `
+      "use strict";
+
+      process.platform = "windows";
+      `,
+      output: `
+      "not strict";
+
+      process.platform = "windows";`,
+      pluginOptions: {
+        removeAll: true,
+      },
+    },
+    {
+      code: `
+      "use strict";
+
+      let x = 1;
+      `,
+      output: `
+      "not strict";
+
+      let x = 1;`,
+      pluginOptions: {
+        removeAll: true,
+      },
+    },
   ]
 })
