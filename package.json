@@ -1,0 +1,31 @@
+{
+  "name": "babel-plugin-transform-not-strict",
+  "main": "index.js",
+  "version": "0.0.0",
+  "author": "Amin Yahyaabadi",
+  "description": "Remove 'use strict' if the file is 'not strict'",
+  "keywords": [
+    "babel-plugin",
+    "use strict",
+    "not strict",
+    "strictMode",
+    "strict",
+    "ES6",
+    "babel"
+  ],
+  "repository": "https://github.com/atom-ide-community/babel-plugin-transform-not-strict",
+  "license": "MIT",
+  "scripts": {
+    "test": "atom --test spec/test.js",
+    "bump": "ncu -u"
+  },
+  "peerDependencies": {
+    "@babel/core": "7.11.6"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.11.6",
+    "@babel/core": "7.11.6",
+    "babel-plugin-tester": "^9.2.0",
+    "npm-check-updates": "8.1.1"
+  }
+}
