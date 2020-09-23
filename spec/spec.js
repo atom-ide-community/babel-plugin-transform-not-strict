@@ -116,6 +116,19 @@ pluginTester({
     },
     {
       code: `
+      "use babel";
+      "use strict";
+      `,
+      output: `
+      "use babel";
+      `,
+      pluginOptions: {
+        directiveTriggers: ['use babel'],
+        commentTriggers: ['@babel', '@flow', '* @babel', '* @flow'],
+      },
+    },
+    {
+      code: `
       "use strict";
       /** @babel */
       let x = 1;
@@ -153,6 +166,42 @@ pluginTester({
       output: `
       // @flow
       let x = 1;
+      `,
+      pluginOptions: {
+        directiveTriggers: ['use babel'],
+        commentTriggers: ['@babel', '@flow', '* @babel', '* @flow'],
+      },
+    },
+    {
+      code: `
+      // @flow
+      "use strict";
+      `,
+      output: ``,
+      pluginOptions: {
+        directiveTriggers: ['use babel'],
+        commentTriggers: ['@babel', '@flow', '* @babel', '* @flow'],
+      },
+    },
+    {
+      code: `
+      // @babel
+      // @flow
+      "use strict";
+      `,
+      output: ``,
+      pluginOptions: {
+        directiveTriggers: ['use babel'],
+        commentTriggers: ['@babel', '@flow', '* @babel', '* @flow'],
+      },
+    },
+    {
+      code: `
+      // @babel
+      "use strict";
+      // @flow
+      `,
+      output: `
       `,
       pluginOptions: {
         directiveTriggers: ['use babel'],
