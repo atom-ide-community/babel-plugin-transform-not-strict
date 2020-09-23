@@ -8,7 +8,7 @@ function removeSelective(path, t, directiveTriggers, commentTriggers) {
             if (t.isDirective(sibling)) { // if the sibiling is a directive
                 if (
                     sibling.value.value === 'not strict' ||
-                    (directiveTriggers.length && directiveTriggers.includes(sibling.value.value)) // extra directive triggers
+                    (commentTriggers && directiveTriggers.includes && directiveTriggers.includes(sibling.value.value)) // extra directive triggers
                 ) { // check if its 'not strict'
                     path.remove(); // remove 'use strict'
                     break;
@@ -16,7 +16,7 @@ function removeSelective(path, t, directiveTriggers, commentTriggers) {
             }
 
             // remove based on comment triggers
-            if (commentTriggers.length) {
+            if (commentTriggers && commentTriggers.includes) {
                 if (sibling.leadingComments) {
                     let foundInLeadingComment = false;
                     for (const leadingComment of sibling.leadingComments) {
