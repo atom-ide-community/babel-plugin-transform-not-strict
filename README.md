@@ -59,3 +59,27 @@ module.exports = {
   sourceMap: "inline",
 };
 ```
+
+### Usage Extra Directive or Comment Triggers
+
+You can add more directive or comment triggers for removal of `'use strict'`. In the following example, `'use babel'` directive or comments that include `'@babel'` or `'@flow'` also instruct the plugin to become active and remove `'use strict'`
+```js
+let presets = [];
+
+let plugins = [
+  [
+    "babel-plugin-transform-not-strict",
+    {
+      directiveTriggers: ['use babel'],
+      commentTriggers: ['@babel', '@flow', '* @babel', '* @flow'],
+    },
+  ],
+];
+
+module.exports = {
+  presets: presets,
+  plugins: plugins,
+  exclude: "node_modules/**",
+  sourceMap: "inline",
+};
+```
