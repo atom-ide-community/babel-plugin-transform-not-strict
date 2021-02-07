@@ -1,6 +1,6 @@
-const pluginTester = require('babel-plugin-tester').default
+const pluginTester = require("babel-plugin-tester").default;
 
-const transformNotStrict = require('../src/index.js')
+const transformNotStrict = require("../src/index.js");
 
 pluginTester({
   plugin: transformNotStrict,
@@ -8,11 +8,11 @@ pluginTester({
   tests: [
     {
       code: '"not strict"; "use strict";',
-      output:'"not strict";',
+      output: '"not strict";',
     },
     {
       code: '"not strict";',
-      output:'"not strict";',
+      output: '"not strict";',
     },
     {
       code: '"use strict";',
@@ -20,7 +20,7 @@ pluginTester({
     },
     {
       code: '"use strict"; "not strict";',
-      output:'"not strict";',
+      output: '"not strict";',
     },
     {
       code: `
@@ -50,7 +50,7 @@ pluginTester({
     // With removeAll option
     {
       code: '"not strict"; "use strict";',
-      output:`
+      output: `
       "not strict";
       "not strict";`,
       pluginOptions: {
@@ -59,7 +59,7 @@ pluginTester({
     },
     {
       code: '"not strict";',
-      output:'"not strict";',
+      output: '"not strict";',
       pluginOptions: {
         removeAll: true,
       },
@@ -110,8 +110,8 @@ pluginTester({
       "use babel";
       `,
       pluginOptions: {
-        directiveTriggers: ['use babel'],
-        commentTriggers: ['@babel', '@flow', '* @babel', '* @flow'],
+        directiveTriggers: ["use babel"],
+        commentTriggers: ["@babel", "@flow", "* @babel", "* @flow"],
       },
     },
     {
@@ -123,8 +123,8 @@ pluginTester({
       "use babel";
       `,
       pluginOptions: {
-        directiveTriggers: ['use babel'],
-        commentTriggers: ['@babel', '@flow', '* @babel', '* @flow'],
+        directiveTriggers: ["use babel"],
+        commentTriggers: ["@babel", "@flow", "* @babel", "* @flow"],
       },
     },
     {
@@ -138,8 +138,8 @@ pluginTester({
       let x = 1;
       `,
       pluginOptions: {
-        directiveTriggers: ['use babel'],
-        commentTriggers: ['@babel', '@flow', '* @babel', '* @flow'],
+        directiveTriggers: ["use babel"],
+        commentTriggers: ["@babel", "@flow", "* @babel", "* @flow"],
       },
     },
     {
@@ -153,8 +153,8 @@ pluginTester({
       let x = 1;
       `,
       pluginOptions: {
-        directiveTriggers: ['use babel'],
-        commentTriggers: ['@babel', '@flow', '* @babel', '* @flow'],
+        directiveTriggers: ["use babel"],
+        commentTriggers: ["@babel", "@flow", "* @babel", "* @flow"],
       },
     },
     {
@@ -168,8 +168,8 @@ pluginTester({
       let x = 1;
       `,
       pluginOptions: {
-        directiveTriggers: ['use babel'],
-        commentTriggers: ['@babel', '@flow', '* @babel', '* @flow'],
+        directiveTriggers: ["use babel"],
+        commentTriggers: ["@babel", "@flow", "* @babel", "* @flow"],
       },
     },
     {
@@ -179,8 +179,8 @@ pluginTester({
       `,
       output: ``,
       pluginOptions: {
-        directiveTriggers: ['use babel'],
-        commentTriggers: ['@babel', '@flow', '* @babel', '* @flow'],
+        directiveTriggers: ["use babel"],
+        commentTriggers: ["@babel", "@flow", "* @babel", "* @flow"],
       },
     },
     {
@@ -191,8 +191,8 @@ pluginTester({
       `,
       output: ``,
       pluginOptions: {
-        directiveTriggers: ['use babel'],
-        commentTriggers: ['@babel', '@flow', '* @babel', '* @flow'],
+        directiveTriggers: ["use babel"],
+        commentTriggers: ["@babel", "@flow", "* @babel", "* @flow"],
       },
     },
     {
@@ -204,9 +204,9 @@ pluginTester({
       output: `
       `,
       pluginOptions: {
-        directiveTriggers: ['use babel'],
-        commentTriggers: ['@babel', '@flow', '* @babel', '* @flow'],
+        directiveTriggers: ["use babel"],
+        commentTriggers: ["@babel", "@flow", "* @babel", "* @flow"],
       },
     },
-  ]
-})
+  ],
+});
