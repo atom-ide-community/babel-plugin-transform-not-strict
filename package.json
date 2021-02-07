@@ -16,6 +16,10 @@
   "repository": "https://github.com/atom-ide-community/babel-plugin-transform-not-strict",
   "license": "MIT",
   "scripts": {
+    "format": "prettier --write .",
+    "test.format": "prettier . --check",
+    "lint": "eslint . --fix",
+    "test.lint": "eslint .",
     "test": "atom --test spec/spec.js",
     "bump": "ncu -u"
   },
