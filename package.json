@@ -27,9 +27,9 @@
     "@babel/core": "^7"
   },
   "devDependencies": {
-    "@babel/cli": "7.13.10",
-    "@babel/core": "7.13.10",
+    "@babel/cli": "7.13.16",
+    "@babel/core": "7.14.0",
     "babel-plugin-tester": "^10.0.0",
-    "npm-check-updates": "11.3.0"
+    "npm-check-updates": "11.5.9"
   }
 }
